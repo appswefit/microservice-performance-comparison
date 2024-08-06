@@ -10,6 +10,6 @@ async function bootstrap() {
       port: 3000,
     },
   });
-  app.listen(() => console.log('Universities microservice listening.'));
+  app.listen();
 }
 bootstrap();
