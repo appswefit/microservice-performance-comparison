@@ -1,34 +1,25 @@
-import { Module, OnModuleInit } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { InjectRepository, TypeOrmModule } from '@nestjs/typeorm';
-import { University } from './entities/University.entity';
-import { Repository } from 'typeorm';
-import * as universities from './data/universities.json';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Ticket } from './entities/Ticket.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: 'db.sqlite',
-      entities: [University],
-      synchronize: true,
+      type: 'postgres',
+      host: 'host.docker.internal',
+      database: 'demo',
+      username: 'postgres',
+      password: 'teste123',
+      synchronize: false,
+      cache: false,
+      entities: [Ticket],
     }),
-    TypeOrmModule.forFeature([University]),
+    TypeOrmModule.forFeature([Ticket]),
   ],
   exports: [],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule implements OnModuleInit {
-  constructor(
-    @InjectRepository(University)
-    private readonly universityRepository: Repository<University>,
-  ) {}
-  onModuleInit() {
-    const entities = (universities as University[]).map((uni) =>
-      this.universityRepository.create(uni),
-    );
-    this.universityRepository.save(entities);
-  }
-}
+export class AppModule {}
