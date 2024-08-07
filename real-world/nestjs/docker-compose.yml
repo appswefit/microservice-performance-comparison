@@ -1,24 +1,7 @@
 services:
   universities:
+    name: nest-container
     build:
       context: ./universities
-    expose:
-      - "3000"
-    networks:
-      nestnetwork:
-        aliases:
-          - nestjs-universities
-  gateway:
-    build:
-      context: ./gateway
     ports:
-      - "4000:4000"
-    networks:
-      nestnetwork:
-        aliases:
-          - nestjs-gateway
-    depends_on:
-      - universities
-networks:
-  nestnetwork:
-    name: nestnetwork
+      - "3000:3000"
