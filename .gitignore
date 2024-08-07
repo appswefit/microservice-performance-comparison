@@ -2,3 +2,6 @@
 **/memstats.txt
 **/k6-summary.json
 .vscode/
+
+stats-nest-container.json
+stats-spring-container.json
