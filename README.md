@@ -8,7 +8,7 @@ Compares two microservice frameworks:
 Includes two sample applications for all the frameworks:
 
 - Hello World (just returns string "Hello World")
-- Universities (returns list of basic info about universities requested with country name, also includes authorization using JWT)
+- Universities (returns list of basic info about universities requested with country name)
 
 ## Running
 
