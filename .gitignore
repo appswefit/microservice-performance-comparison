@@ -2,3 +2,5 @@
 **/memstats.txt
 **/k6-summary.json
 .vscode/
+*.sql
+*.jar
