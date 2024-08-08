@@ -226,10 +226,10 @@ export let options = {
 const sleepTime = 0.5;
 
 const errorCount = new Counter("req_failed_count");
+const framework = __ENV.FRAMEWORK;
 
 export default function () {
-  const country = COUNTRIES[getRandomInt(0, COUNTRIES.length - 1)];
-  const framework = __ENV.FRAMEWORK;
+  const country = encodeURI(COUNTRIES[getRandomInt(0, COUNTRIES.length - 1)]);
 
   let res =
     framework == "nest"

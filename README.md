@@ -1,10 +1,9 @@
 # Microservice framework performance comparison
 
-Compares three microservice frameworks:
+Compares two microservice frameworks:
 
 - NestJS (https://nestjs.com/)
 - Spring (Boot + Cloud) (https://spring.io/)
-- Micro (https://micro.mu/)
 
 Includes two sample applications for all the frameworks:
 
@@ -23,3 +22,4 @@ After this, there will be files "cpustats.txt", "memstats.txt" and "k6-summary.j
 - Docker
 - Make
 - k6
+- Python

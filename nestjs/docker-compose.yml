@@ -1,5 +1,6 @@
 services:
   api:
+    container_name: nest-container
     build:
       context: .
     ports:
