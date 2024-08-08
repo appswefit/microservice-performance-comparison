@@ -1,7 +1,0 @@
-services:
-  universities:
-    name: nest-container
-    build:
-      context: ./universities
-    ports:
-      - "3000:3000"
